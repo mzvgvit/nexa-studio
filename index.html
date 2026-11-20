@@ -1,0 +1,1549 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXA Studio — Realizzazione siti web e web app | Разработка сайтов</title>
+<meta name="description" content="Realizzazione siti web, e-commerce e applicazioni web in Italia. Разработка сайтов и интернет-магазинов под ключ. NEXA Studio.">
+
+<link rel="canonical" href="https://YOUR-DOMAIN/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238b5cf6'/><text x='16' y='23' font-size='18' font-weight='bold' text-anchor='middle' fill='white' font-family='sans-serif'>N</text></svg>">
+<meta name="theme-color" content="#0a0b0f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEXA Studio">
+<meta property="og:title" content="NEXA Studio — Realizzazione siti web, e-commerce e web app">
+<meta property="og:description" content="Realizzazione siti web, e-commerce e applicazioni web in Italia. Разработка сайтов и интернет-магазинов под ключ — русский и итальянский.">
+<meta property="og:url" content="https://YOUR-DOMAIN/">
+<meta property="og:image" content="https://YOUR-DOMAIN/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NEXA Studio — Realizzazione siti web, e-commerce e web app">
+<meta name="twitter:description" content="Realizzazione siti web, e-commerce e applicazioni web in Italia.">
+<meta name="twitter:image" content="https://YOUR-DOMAIN/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   NEXA — placeholder name, replace with the real company name
+   ============================================================ */
+:root{
+  --bg:#0a0b0f;
+  --bg-soft:#0f1118;
+  --card:#12141d;
+  --card-2:#161925;
+  --line:rgba(255,255,255,.08);
+  --line-strong:rgba(255,255,255,.16);
+  --text:#eef0f6;
+  --muted:#9aa1b4;
+  --accent-1:#8b5cf6;  /* violet */
+  --accent-2:#22d3ee;  /* cyan   */
+  --accent-3:#f59e0b;  /* amber  */
+  --grad:linear-gradient(100deg,var(--accent-1),var(--accent-2));
+  --radius:20px;
+  --radius-sm:12px;
+  --font-display:'Unbounded',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:86px}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--font-body);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--accent-1);color:#fff}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+@media(max-width:640px){.container{padding:0 18px}}
+
+h1,h2,h3,.display{font-family:var(--font-display);font-weight:600;letter-spacing:-.01em}
+.section{padding:110px 0}
+@media(max-width:768px){.section{padding:72px 0}}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent-2);margin-bottom:18px;
+}
+.kicker::before{content:"";width:26px;height:2px;background:var(--grad);border-radius:2px}
+.h2{font-size:clamp(26px,4.2vw,42px);line-height:1.2;margin-bottom:18px}
+.lead{color:var(--muted);font-size:17px;max-width:640px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* --------- reveal animation --------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.header{
+  position:fixed;inset:0 0 auto;z-index:100;
+  background:rgba(10,11,15,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s;
+}
+.header.scrolled{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:.02em}
+.logo-mark{
+  width:34px;height:34px;border-radius:10px;background:var(--grad);
+  display:grid;place-items:center;color:#fff;font-size:15px;font-weight:700;
+  box-shadow:0 6px 20px rgba(139,92,246,.35);
+}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;position:relative}
+.nav-links a:hover{color:var(--text)}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--grad);border-radius:2px;transition:width .25s;
+}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:14px}
+
+.lang-switch{
+  display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:99px;padding:3px;gap:2px;
+}
+.lang-switch button{
+  background:transparent;border:0;color:var(--muted);font-size:12px;font-weight:700;
+  padding:6px 12px;border-radius:99px;letter-spacing:.08em;transition:.2s;
+}
+.lang-switch button.active{background:var(--grad);color:#fff}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 26px;border-radius:12px;font-size:14px;font-weight:600;border:0;
+  transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap;
+}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 26px rgba(139,92,246,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(139,92,246,.5)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line-strong)}
+.btn-ghost:hover{border-color:var(--accent-2);color:var(--accent-2)}
+.btn-sm{padding:10px 20px;font-size:13px}
+
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:8px}
+.burger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+
+@media(max-width:880px){
+  .nav-links{
+    position:fixed;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;
+    background:rgba(10,11,15,.97);padding:28px 24px;gap:20px;
+    border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .35s;
+  }
+  .nav-links.open{transform:none}
+  .nav-links a{font-size:17px}
+  .burger{display:flex}
+  .nav-right .btn{display:none}
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;padding:190px 0 100px;overflow:hidden;
+}
+@media(max-width:768px){.hero{padding:150px 0 70px}}
+.hero-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(680px 380px at 82% 8%,rgba(139,92,246,.22),transparent 65%),
+    radial-gradient(560px 380px at 8% 85%,rgba(34,211,238,.12),transparent 65%);
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 80% 65% at 50% 40%,#000 30%,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 65% at 50% 40%,#000 30%,transparent 75%);
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+@media(max-width:980px){.hero-inner{grid-template-columns:1fr;gap:44px}}
+.hero .kicker{margin-bottom:22px}
+.hero h1{font-size:clamp(30px,5.2vw,54px);line-height:1.12;margin-bottom:24px}
+.hero .lead{font-size:18px;margin-bottom:36px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:38px;margin-top:52px;flex-wrap:wrap}
+.stat b{font-family:var(--font-display);font-size:26px;display:block;line-height:1}
+.stat span{color:var(--muted);font-size:13px}
+@media(max-width:640px){.hero-stats{gap:24px}.stat b{font-size:21px}}
+
+/* hero visual — окно браузера с превью сайта */
+.hero-visual{position:relative}
+.browser-mock{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.5);
+}
+.bm-bar{display:flex;align-items:center;gap:7px;padding:12px 16px;background:var(--bg-soft);border-bottom:1px solid var(--line)}
+.bm-bar i{width:11px;height:11px;border-radius:50%}
+.bm-bar i:nth-child(1){background:#f87171}
+.bm-bar i:nth-child(2){background:#fbbf24}
+.bm-bar i:nth-child(3){background:#34d399}
+.bm-url{
+  flex:1;text-align:center;font-size:11.5px;color:var(--muted);
+  background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:8px;
+  padding:4px 10px;max-width:200px;margin:0 auto;letter-spacing:.03em;
+}
+.bm-site{padding:22px 20px 24px;background:
+  radial-gradient(320px 160px at 85% 0%,rgba(139,92,246,.25),transparent 70%),
+  radial-gradient(260px 140px at 0% 100%,rgba(34,211,238,.16),transparent 70%),
+  var(--bg-soft);
+}
+.bm-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+.bm-logo{display:flex;align-items:center;gap:7px;font-family:var(--font-display);font-size:11px;font-weight:700}
+.bm-logo i{width:16px;height:16px;border-radius:5px;background:var(--grad);display:inline-block}
+.bm-menu{display:flex;gap:10px}
+.bm-menu i{width:26px;height:5px;border-radius:3px;background:var(--line-strong)}
+.bm-menu i:first-child{background:var(--accent-1);opacity:.8}
+.bm-title{height:16px;width:78%;border-radius:6px;background:linear-gradient(90deg,rgba(238,240,246,.85),rgba(238,240,246,.35))}
+.bm-title.big{height:20px;width:92%;margin-bottom:10px}
+.bm-sub{height:8px;width:64%;border-radius:4px;background:var(--line-strong);margin-bottom:8px}
+.bm-btns{display:flex;gap:10px;margin:22px 0 26px}
+.bm-btns i{height:30px;border-radius:9px}
+.bm-btns i:first-child{width:34%;background:var(--grad);box-shadow:0 6px 16px rgba(139,92,246,.4)}
+.bm-btns i:last-child{width:28%;border:1px solid var(--line-strong)}
+.bm-cards{display:flex;gap:12px}
+.bm-cards i{flex:1;height:52px;border-radius:10px;background:var(--card);border:1px solid var(--line);position:relative;overflow:hidden}
+.bm-cards i::after{content:"";position:absolute;left:10px;right:10px;top:10px;height:6px;border-radius:3px;background:var(--line-strong)}
+.bm-cards i::before{content:"";position:absolute;left:10px;right:35%;top:24px;height:5px;border-radius:3px;background:var(--line)}
+.bm-cards i:nth-child(1){border-bottom:2px solid var(--accent-1)}
+.bm-cards i:nth-child(2){border-bottom:2px solid var(--accent-2)}
+.bm-cards i:nth-child(3){border-bottom:2px solid var(--accent-3)}
+.float-chip{
+  position:absolute;display:flex;align-items:center;gap:10px;
+  background:rgba(18,20,29,.9);border:1px solid var(--line-strong);border-radius:14px;
+  padding:12px 16px;font-size:13px;font-weight:600;backdrop-filter:blur(8px);
+  box-shadow:0 16px 40px rgba(0,0,0,.45);
+  animation:float 6s ease-in-out infinite;
+}
+.float-chip .dot{width:9px;height:9px;border-radius:50%;background:#34d399;box-shadow:0 0 12px #34d399}
+.chip-1{top:-22px;right:6%;animation-delay:.4s}
+.chip-2{bottom:-24px;left:-6%;animation-delay:1.6s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media(max-width:640px){.chip-1{right:0}.chip-2{left:0}}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:22px 0;overflow:hidden;background:var(--bg-soft);
+}
+.marquee-track{display:flex;gap:56px;width:max-content;animation:marquee 30s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{
+  font-family:var(--font-display);font-size:15px;font-weight:500;color:var(--muted);
+  display:flex;align-items:center;gap:56px;white-space:nowrap;
+}
+.marquee-track span::after{content:"✦";color:var(--accent-1);font-size:13px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+@media(max-width:980px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.services-grid{grid-template-columns:1fr}}
+.service{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 26px;position:relative;overflow:hidden;transition:.3s;
+}
+.service::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);
+  opacity:0;transition:opacity .3s;
+}
+.service:hover{transform:translateY(-5px);border-color:var(--line-strong);background:var(--card-2)}
+.service:hover::before{opacity:1}
+.service-icon{
+  width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:23px;
+  background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.25);margin-bottom:20px;
+}
+.service h3{font-size:16px;margin-bottom:10px;font-weight:600}
+.service p{color:var(--muted);font-size:14px}
+.service ul{margin-top:14px;list-style:none;display:grid;gap:6px}
+.service ul li{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.service ul li::before{content:"→";color:var(--accent-2);flex-shrink:0}
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+.process{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:52px;counter-reset:step}
+@media(max-width:980px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.steps{grid-template-columns:1fr}}
+.step{
+  counter-increment:step;position:relative;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:30px 24px 26px;transition:.3s;
+}
+.step:hover{border-color:rgba(139,92,246,.4)}
+.step::before{
+  content:"0" counter(step);
+  font-family:var(--font-display);font-size:34px;font-weight:700;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  display:block;margin-bottom:16px;
+}
+.step h3{font-size:15px;margin-bottom:9px;font-weight:600}
+.step p{color:var(--muted);font-size:13.5px}
+
+/* ============================================================
+   CASES
+   ============================================================ */
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+@media(max-width:980px){.cases-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cases-grid{grid-template-columns:1fr}}
+.case{
+  border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--card);
+  transition:.3s;position:relative;
+}
+.case:hover{transform:translateY(-5px);border-color:var(--line-strong)}
+.case-thumb{height:190px;display:grid;place-items:center;font-family:var(--font-display);font-size:20px;color:rgba(255,255,255,.85);position:relative;overflow:hidden}
+.case-thumb::after{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);
+  background-size:34px 34px;
+}
+.t-1{background:linear-gradient(135deg,#7c3aed,#4f46e5)}
+.t-2{background:linear-gradient(135deg,#0ea5e9,#06b6d4)}
+.t-3{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.t-4{background:linear-gradient(135deg,#10b981,#059669)}
+.t-5{background:linear-gradient(135deg,#ec4899,#8b5cf6)}
+.t-6{background:linear-gradient(135deg,#64748b,#334155)}
+.case-body{padding:22px 22px 24px}
+.case-body .tag{
+  display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent-2);border:1px solid rgba(34,211,238,.3);border-radius:99px;padding:4px 11px;margin-bottom:12px;
+}
+.case-body h3{font-size:16px;margin-bottom:7px}
+.case-body p{color:var(--muted);font-size:13.5px}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}}
+.about-points{display:grid;gap:18px;margin-top:30px}
+.about-point{display:flex;gap:15px;align-items:flex-start}
+.about-point b{font-size:15px;font-weight:600;display:block;margin-bottom:3px}
+.about-point p{color:var(--muted);font-size:14px}
+.check{
+  width:26px;height:26px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;
+  background:rgba(52,211,153,.12);color:#34d399;font-size:13px;border:1px solid rgba(52,211,153,.3);
+}
+.about-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:36px 32px;
+  position:relative;overflow:hidden;
+}
+.about-card::before{
+  content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,246,.25),transparent 70%);top:-90px;right:-70px;
+}
+.about-card .num-row{display:grid;gap:26px;margin-top:8px}
+.about-card .num-row b{font-family:var(--font-display);font-size:32px;display:block}
+.about-card .num-row span{color:var(--muted);font-size:13.5px}
+.about-card hr{border:0;border-top:1px solid var(--line)}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+@media(max-width:980px){.testi-grid{grid-template-columns:1fr}}
+.testi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;display:flex;flex-direction:column;gap:18px;transition:.3s}
+.testi:hover{border-color:var(--line-strong)}
+.stars{color:var(--accent-3);letter-spacing:3px;font-size:14px}
+.testi p{color:var(--muted);font-size:14.5px;flex:1}
+.testi .who{display:flex;align-items:center;gap:13px}
+.avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;color:#fff}
+.a-1{background:linear-gradient(135deg,#8b5cf6,#6366f1)}
+.a-2{background:linear-gradient(135deg,#06b6d4,#0ea5e9)}
+.a-3{background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.who b{font-size:14px;display:block}
+.who span{color:var(--muted);font-size:12.5px}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq-wrap{max-width:780px;margin:0 auto}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color .3s}
+.faq.open{border-color:rgba(139,92,246,.4)}
+.faq-q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  background:none;border:0;color:var(--text);text-align:left;
+  padding:21px 24px;font-size:15px;font-weight:600;
+}
+.faq-q .pm{width:26px;height:26px;border-radius:8px;border:1px solid var(--line-strong);display:grid;place-items:center;font-size:15px;flex-shrink:0;transition:.3s;color:var(--muted)}
+.faq.open .pm{background:var(--grad);color:#fff;border-color:transparent;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a p{padding:0 24px 22px;color:var(--muted);font-size:14.5px}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact-band{
+  position:relative;padding:110px 0;overflow:hidden;
+  background:
+    radial-gradient(700px 340px at 15% 20%,rgba(139,92,246,.16),transparent 65%),
+    radial-gradient(700px 340px at 85% 90%,rgba(34,211,238,.13),transparent 65%),
+    var(--bg-soft);
+  border-top:1px solid var(--line);
+}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+.contact-list{display:grid;gap:16px;margin-top:34px}
+.contact-item{display:flex;gap:15px;align-items:center}
+.ci-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(139,92,246,.13);border:1px solid rgba(139,92,246,.25);font-size:18px;flex-shrink:0}
+.ci-icon.teal{background:rgba(34,211,238,.12);border-color:rgba(34,211,238,.28)}
+.contact-item b{font-size:15px;display:block}
+.contact-item span{color:var(--muted);font-size:13.5px}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:36px 32px}
+@media(max-width:600px){.form-card{padding:26px 22px}}
+.form-card h3{font-size:19px;margin-bottom:6px}
+.form-card > p{color:var(--muted);font-size:14px;margin-bottom:24px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+.field{display:grid;gap:7px;margin-bottom:14px}
+.field label{font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.04em}
+.field input,.field select,.field textarea{
+  background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:11px;
+  padding:13px 15px;color:var(--text);font-family:inherit;font-size:14px;width:100%;transition:border .2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--accent-1)}
+.field textarea{min-height:110px;resize:vertical}
+.form-note{font-size:12px;color:var(--muted);margin-top:14px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--muted);font-weight:500;cursor:pointer}
+.consent input{width:16px;height:16px;accent-color:var(--accent-1);margin-top:1px;flex-shrink:0;cursor:pointer}
+.form-ok{display:none;margin-top:14px;color:#34d399;font-size:14px;font-weight:600}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{border-top:1px solid var(--line);padding:64px 0 34px;background:var(--bg)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
+.footer h4{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.footer ul{list-style:none;display:grid;gap:10px}
+.footer ul a{color:var(--muted);font-size:14px;transition:color .2s}
+.footer ul a:hover{color:var(--text)}
+.footer .logo p{color:var(--muted);font-size:13.5px;margin-top:16px;max-width:280px}
+.footer-bottom{border-top:1px solid var(--line);padding-top:26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+
+/* ============================================================
+   PAIN PICKER
+   ============================================================ */
+.pain-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.pain-tab{
+  border:1px solid var(--line-strong);background:var(--card);color:var(--muted);
+  padding:11px 19px;border-radius:99px;font-size:13.5px;font-weight:600;transition:.25s;
+}
+.pain-tab:hover{color:var(--text);border-color:var(--accent-2)}
+.pain-tab.active{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(139,92,246,.35)}
+.pain-panel{
+  margin-top:26px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 30px 26px;
+}
+@media(max-width:600px){.pain-panel{padding:24px 20px}}
+.pp-quote{
+  font-size:clamp(17px,2.4vw,21px);font-weight:600;line-height:1.45;color:var(--text);
+  border-left:3px solid;border-image:linear-gradient(180deg,var(--accent-1),var(--accent-2)) 1;
+  padding:2px 0 2px 20px;margin-bottom:24px;font-style:italic;
+}
+.pp-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:640px){.pp-cols{grid-template-columns:1fr}}
+.pp-cols b{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);display:block;margin-bottom:8px}
+.pp-cols p{color:var(--muted);font-size:14px}
+
+/* ============================================================
+   PRICING
+   ============================================================ */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;align-items:stretch}
+@media(max-width:900px){.price-grid{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}}
+.price-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 28px;display:flex;flex-direction:column;gap:18px;position:relative;transition:.3s;
+}
+.price-card:hover{transform:translateY(-5px);border-color:var(--line-strong)}
+.price-card.hot{border-color:rgba(139,92,246,.55);background:linear-gradient(180deg,rgba(139,92,246,.10),rgba(34,211,238,.05)),var(--card)}
+.pc-badge{
+  position:absolute;top:-13px;left:24px;background:var(--grad);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 14px;border-radius:99px;
+}
+.pc-name{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.pc-price{font-family:var(--font-display);font-size:30px;font-weight:700}
+.price-card p{color:var(--muted);font-size:14px;flex:0}
+.price-card ul{list-style:none;display:grid;gap:9px;flex:1}
+.price-card ul li{font-size:14px;color:var(--muted);display:flex;gap:9px}
+.price-card ul li::before{content:"✓";color:#34d399;font-weight:700}
+
+/* ============================================================
+   DOCK (плавающая панель с CTA)
+   ============================================================ */
+.dock{
+  position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%);z-index:95;
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;
+  background:rgba(18,20,29,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line-strong);border-radius:18px;padding:13px 13px 13px 24px;
+  box-shadow:0 24px 60px rgba(0,0,0,.55);transition:transform .45s cubic-bezier(.2,.9,.3,1.2);
+  max-width:calc(100vw - 32px);
+}
+.dock.show{transform:translate(-50%,0)}
+.dock p{font-size:13.5px;color:var(--muted)}
+.dock p b{color:var(--text)}
+@media(max-width:640px){.dock p{width:100%;text-align:center;padding:0 4px}}
+
+/* ============================================================
+   COOKIE BANNER
+   ============================================================ */
+.cookie-banner{
+  position:fixed;left:22px;bottom:22px;z-index:110;max-width:420px;
+  background:rgba(18,20,29,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line-strong);border-radius:18px;padding:22px 22px 20px;
+  box-shadow:0 24px 60px rgba(0,0,0,.55);
+  transform:translateY(130%);transition:transform .5s cubic-bezier(.2,.9,.3,1.15);
+}
+@media(max-width:480px){.cookie-banner{left:14px;right:14px;bottom:14px;max-width:none}}
+.cookie-banner.show{transform:none}
+.cookie-banner h5{font-size:14px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.cookie-banner p{color:var(--muted);font-size:12.5px;line-height:1.55;margin-bottom:16px}
+.cookie-banner .cb-btns{display:flex;gap:10px}
+.cookie-banner .btn{flex:1;justify-content:center;padding:10px 12px;font-size:13px}
+.cookie-link{color:var(--accent-2);text-decoration:underline}
+
+/* to top */
+.to-top{
+  position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:13px;z-index:90;
+  background:var(--card);border:1px solid var(--line-strong);color:var(--text);font-size:17px;
+  display:grid;place-items:center;opacity:0;pointer-events:none;transition:.3s;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{background:var(--grad);color:#fff;border-color:transparent}
+</style>
+<script>
+/* ==========================================================
+   GOOGLE ANALYTICS 4 — TODO: замените G-XXXXXXXXXX на ваш
+   Measurement ID (данные -> потоки данных -> GA4)
+   Загрузка ТОЛЬКО после согласия пользователя (cookie-баннер).
+   ========================================================== */
+window.dataLayer = window.dataLayer || [];
+window.gtag = function(){ dataLayer.push(arguments); };
+window.initGA4 = function(){
+  const GA4_ID = 'G-XXXXXXXXXX';   // <-- сюда ID
+  if(!/^G-[A-Z0-9]+$/.test(GA4_ID)) return; // не загружается, пока стоит заглушка
+  if(window.__ga4Loaded) return;
+  window.__ga4Loaded = true;
+  const s = document.createElement('script');
+  s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', GA4_ID);
+  window.leadEvent = function(){ gtag('event', 'generate_lead', {'form': 'contact'}); };
+};
+</script>
+<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization","ProfessionalService"],
+      "@id": "https://YOUR-DOMAIN/#org",
+      "name": "NEXA Studio",
+      "url": "https://YOUR-DOMAIN/",
+      "description": "Studio di sviluppo web: realizzazione siti web, e-commerce e applicazioni web. Веб-студия: разработка сайтов, интернет-магазинов и веб-приложений.",
+      "telephone": "+39 000 000 0000",
+      "email": "info@example.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via dell'Industria 00",
+        "postalCode": "00000",
+        "addressLocality": "Città",
+        "addressRegion": "RM",
+        "addressCountry": "IT"
+      },
+      "areaServed": [
+        {"@type":"Country","name":"Italy"},
+        {"@type":"Country","name":"Russia"}
+      ],
+      "knowsLanguage": ["it","ru"],
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://YOUR-DOMAIN/#website",
+      "url": "https://YOUR-DOMAIN/",
+      "name": "NEXA Studio",
+      "inLanguage": ["it","ru"],
+      "publisher": {"@id": "https://YOUR-DOMAIN/#org"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://YOUR-DOMAIN/#webpage",
+      "url": "https://YOUR-DOMAIN/",
+      "name": "NEXA Studio — Realizzazione siti web, e-commerce e web app",
+      "inLanguage": "it",
+      "about": {"@id": "https://YOUR-DOMAIN/#org"},
+      "isPartOf": {"@id": "https://YOUR-DOMAIN/#website"}
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://YOUR-DOMAIN/#faq",
+      "isPartOf": {"@id": "https://YOUR-DOMAIN/#webpage"},
+      "mainEntity": [
+        {"@type":"Question","name":"Quanto costa un sito?","acceptedAnswer":{"@type":"Answer","text":"Un sito business parte da €1.500, un e-commerce da €3.500; le applicazioni su misura si stimano in base alla richiesta. Il preventivo dettagliato è gratuito, dopo una breve call."}},
+        {"@type":"Question","name":"Quanto tempo serve per lo sviluppo?","acceptedAnswer":{"@type":"Answer","text":"Sito business: 2–3 settimane; e-commerce: 4–6. Il termine viene fissato nel contratto e mostriamo l'avanzamento ogni settimana."}},
+        {"@type":"Question","name":"Potrò aggiornare i contenuti da solo?","acceptedAnswer":{"@type":"Answer","text":"Sì. Colleghiamo un CMS comodo e ti formiamo: testi, foto, news e prodotti li aggiorni quando vuoi, senza programmatore."}},
+        {"@type":"Question","name":"Vi occupate voi di hosting e dominio?","acceptedAnswer":{"@type":"Answer","text":"Sì: scegliamo e registriamo il dominio, configuriamo hosting veloce, certificato SSL e caselle di posta sul tuo dominio."}},
+        {"@type":"Question","name":"E dopo il lancio, che assistenza c'è?","acceptedAnswer":{"@type":"Answer","text":"Il primo mese di assistenza è gratuito. Poi si applica la tariffa di manutenzione: aggiornamenti, backup, monitoraggio e qualsiasi modifica."}},
+        {"@type":"Question","name":"Lavorate con clienti internazionali?","acceptedAnswer":{"@type":"Answer","text":"Certo. Realizziamo siti multilingua e seguiamo i progetti interamente a distanza — in russo e in italiano, per iscritto anche in inglese."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body id="top">
+
+<!-- ======================= HEADER ======================= -->
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#top" class="logo">
+      <span class="logo-mark">N</span>
+      <span>NEXA<span class="grad-text">.</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services" data-i18n="nav.services">Servizi</a>
+      <a href="#cases" data-i18n="nav.cases">Progetti</a>
+      <a href="#process" data-i18n="nav.process">Come lavoriamo</a>
+      <a href="#about" data-i18n="nav.about">Chi siamo</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-i18n="nav.contact">Contatti</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Lingua / Язык">
+        <button id="langIT" class="active" aria-pressed="true">IT</button>
+        <button id="langRU" aria-pressed="false">RU</button>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-sm" data-i18n="nav.cta">Inizia il progetto</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ======================= HERO ======================= -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container hero-inner">
+    <div>
+      <span class="kicker" data-i18n="hero.kicker">Web agency full-service</span>
+      <h1 data-i18n-html="hero.title">Siti web che <span class="grad-text">lavorano</span> davvero per il tuo business</h1>
+      <p class="lead" data-i18n="hero.lead">Progettiamo e sviluppiamo siti vetrina, e-commerce e applicazioni web: design curato, codice veloce e SEO pensata per portare clienti — tutto chiavi in mano.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Parliamo del tuo progetto</a>
+        <a href="#cases" class="btn btn-ghost" data-i18n="hero.cta2">Guarda i lavori</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b class="grad-text">6+</b><span data-i18n="hero.s1">anni di sviluppo</span></div>
+        <div class="stat"><b class="grad-text">60+</b><span data-i18n="hero.s2">progetti realizzati</span></div>
+        <div class="stat"><b class="grad-text">98%</b><span data-i18n="hero.s3">torna per nuovi lavori</span></div>
+        <div class="stat"><b class="grad-text">2</b><span data-i18n="hero.s4">lingue di supporto</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="float-chip chip-1"><span class="dot"></span><span data-i18n="hero.chip1">Velocità 98/100</span></div>
+      <div class="browser-mock">
+        <div class="bm-bar"><i></i><i></i><i></i><span class="bm-url">nexa.studio</span><span style="width:11px"></span></div>
+        <div class="bm-site">
+          <div class="bm-nav">
+            <span class="bm-logo"><i></i>NEXA.</span>
+            <span class="bm-menu"><i></i><i></i><i></i></span>
+          </div>
+          <div class="bm-title big"></div>
+          <div class="bm-title"></div>
+          <div class="bm-sub"></div>
+          <div class="bm-sub" style="width:40%"></div>
+          <div class="bm-btns"><i></i><i></i></div>
+          <div class="bm-cards"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="float-chip chip-2" aria-hidden="true">🚀 <span data-i18n="hero.chip2">Lancio senza stress</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= MARQUEE ======================= -->
+<div class="marquee">
+  <div class="marquee-track" id="marqueeTrack" aria-hidden="true">
+    <span>WordPress</span><span>PrestaShop</span><span>React</span><span>Node.js</span><span>Figma / UX</span><span>SEO</span><span>E-commerce</span><span>Landing Page</span><span>API &amp; Integrazioni</span><span>Web App</span>
+  </div>
+</div>
+
+<!-- ======================= PAIN POINTS ======================= -->
+<section class="section" id="pains" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <span class="kicker" data-i18n="pain.kicker">Situazioni conosciute?</span>
+    <h2 class="h2 reveal" data-i18n-html="pain.title">Quale di questi problemi <span class="grad-text">è il tuo?</span></h2>
+    <p class="lead reveal" data-i18n="pain.lead">La maggior parte dei nostri clienti è arrivata a noi proprio dopo una di queste storie. Ti suona familiare?</p>
+    <div class="pain-tabs reveal">
+      <button class="pain-tab active" data-pain="1" data-i18n="pn1.t">Sito presente, richieste assenti</button>
+      <button class="pain-tab" data-pain="2" data-i18n="pn2.t">«Lo sviluppatore è sparito»</button>
+      <button class="pain-tab" data-pain="3" data-i18n="pn3.t">Dal telefono non si legge</button>
+      <button class="pain-tab" data-pain="4" data-i18n="pn4.t">Fatto con un builder — bloccati</button>
+      <button class="pain-tab" data-pain="5" data-i18n="pn5.t">Anni di SEO senza risultati</button>
+      <button class="pain-tab" data-pain="6" data-i18n="pn6.t">Il sito non cresce con l'azienda</button>
+    </div>
+    <div class="pain-panel reveal" id="painPanel">
+      <div class="pp-quote" id="ppQuote"></div>
+      <div class="pp-cols">
+        <div><b data-i18n="pain.why">Dove sta il problema</b><p id="ppWhy"></p></div>
+        <div><b data-i18n="pain.way">Come lo risolviamo</b><p id="ppWay"></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SERVICES ======================= -->
+<section class="section" id="services">
+  <div class="container">
+    <span class="kicker" data-i18n="services.kicker">Servizi</span>
+    <h2 class="h2 reveal" data-i18n-html="services.title">Sviluppo siti web — tutto il ciclo <span class="grad-text">dall'idea al lancio</span></h2>
+    <p class="lead reveal" data-i18n="services.lead">Ci occupiamo di tutto: concept, design, sviluppo, contenuti e assistenza tecnica.</p>
+    <div class="services-grid">
+      <div class="service reveal">
+        <div class="service-icon" aria-hidden="true">🖥️</div>
+        <h3 data-i18n="sv1.t">Siti vetrina e corporate</h3>
+        <p data-i18n="sv1.d">Sito vetrina moderno o portale aziendale multisezione con CMS comodo e flessibile.</p>
+        <ul><li data-i18n="sv1.l1">Design responsive</li><li data-i18n="sv1.l2">CMS a scelta</li><li data-i18n="sv1.l3">Multilingua</li></ul>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon" aria-hidden="true">🛒</div>
+        <h3 data-i18n="sv2.t">E-commerce</h3>
+        <p data-i18n="sv2.d">Negozi su PrestaShop e WooCommerce: catalogo, pagamenti, spedizioni e integrazioni.</p>
+        <ul><li data-i18n="sv2.l1">Pagamenti e spedizioni</li><li data-i18n="sv2.l2">Integrazione ERP / gestionale</li><li data-i18n="sv2.l3">Cataloghi di grandi volumi</li></ul>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon" aria-hidden="true">⚡</div>
+        <h3 data-i18n="sv3.t">Applicazioni web</h3>
+        <p data-i18n="sv3.d">Aree riservate, portali e CRM su misura con stack moderno (React, Node.js).</p>
+        <ul><li data-i18n="sv3.l1">Logica personalizzata</li><li data-i18n="sv3.l2">API e integrazioni</li><li data-i18n="sv3.l3">Scalabilità</li></ul>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon" aria-hidden="true">🎨</div>
+        <h3 data-i18n="sv4.t">UX/UI e branding</h3>
+        <p data-i18n="sv4.d">Identità e interfacce che funzionano: dal logo al design system del progetto.</p>
+        <ul><li data-i18n="sv4.l1">Logo e identità</li><li data-i18n="sv4.l2">Wireframe e prototipi</li><li data-i18n="sv4.l3">Design system</li></ul>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon" aria-hidden="true">📈</div>
+        <h3 data-i18n="sv5.t">SEO e analytics</h3>
+        <p data-i18n="sv5.d">Ottimizzazione tecnica, keyword research e configurazione analytics per generare richieste.</p>
+        <ul><li data-i18n="sv5.l1">Audit tecnico SEO</li><li data-i18n="sv5.l2">Google / Yandex</li><li data-i18n="sv5.l3">Report e obiettivi</li></ul>
+      </div>
+      <div class="service reveal">
+        <div class="service-icon" aria-hidden="true">🛡️</div>
+        <h3 data-i18n="sv6.t">Manutenzione e crescita</h3>
+        <p data-i18n="sv6.d">Aggiornamenti, backup, sicurezza e nuovi sviluppi: il sito resta sempre al top.</p>
+        <ul><li data-i18n="sv6.l1">Aggiornamenti e backup</li><li data-i18n="sv6.l2">Monitoraggio e sicurezza</li><li data-i18n="sv6.l3">Nuove funzioni su richiesta</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PROCESS ======================= -->
+<section class="section process" id="process">
+  <div class="container">
+    <span class="kicker" data-i18n="process.kicker">Come lavoriamo</span>
+    <h2 class="h2 reveal" data-i18n-html="process.title">Quattro passi — <span class="grad-text">chiari e nei tempi</span></h2>
+    <p class="lead reveal" data-i18n="process.lead">Un processo trasparente, senza sorprese: sai sempre a che punto è il progetto e quale è il passo successivo.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <h3 data-i18n="ps1.t">Analisi e piano</h3>
+        <p data-i18n="ps1.d">Studiamo il tuo business e i concorrenti, definiamo obiettivi e struttura. Tempi e budget fissati subito.</p>
+      </div>
+      <div class="step reveal">
+        <h3 data-i18n="ps2.t">Design</h3>
+        <p data-i18n="ps2.d">Prototipi e layout su misura con due round di revisioni. Ogni schermata viene approvata da te.</p>
+      </div>
+      <div class="step reveal">
+        <h3 data-i18n="ps3.t">Sviluppo</h3>
+        <p data-i18n="ps3.d">Realizziamo il sito, collegiamo CMS, integrazioni e analytics. Test approfonditi su tutti i dispositivi.</p>
+      </div>
+      <div class="step reveal">
+        <h3 data-i18n="ps4.t">Lancio e crescita</h3>
+        <p data-i18n="ps4.d">Pubblichiamo, impostiamo la base SEO, formiamo il team all'uso del CMS e restiamo al tuo fianco.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CASES ======================= -->
+<section class="section" id="cases">
+  <div class="container">
+    <span class="kicker" data-i18n="cases.kicker">Portfolio</span>
+    <h2 class="h2 reveal" data-i18n-html="cases.title">Ultimi <span class="grad-text">progetti</span></h2>
+    <p class="lead reveal" data-i18n="cases.lead">Esempi di lavori in settori diversi: dal business locale ai progetti internazionali.</p>
+    <div class="cases-grid">
+      <div class="case reveal">
+        <div class="case-thumb t-1"><span>MARETERRA</span></div>
+        <div class="case-body">
+          <span class="tag" data-i18n="cs1.tag">E-commerce</span>
+          <h3>MareTerra</h3>
+          <p data-i18n="cs1.d">Negozio di articoli per la casa di produzione italiana. +160% di vendite nel primo anno.</p>
+        </div>
+      </div>
+      <div class="case reveal">
+        <div class="case-thumb t-2"><span>DENTPRO</span></div>
+        <div class="case-body">
+          <span class="tag" data-i18n="cs2.tag">Sito corporate</span>
+          <h3>DentPro</h3>
+          <p data-i18n="cs2.d">Sito multilingua della clinica con prenotazione online. −40% di carico di lavoro per la segreteria.</p>
+        </div>
+      </div>
+      <div class="case reveal">
+        <div class="case-thumb t-3"><span>FOODLINE</span></div>
+        <div class="case-body">
+          <span class="tag" data-i18n="cs3.tag">Landing page</span>
+          <h3>FoodLine</h3>
+          <p data-i18n="cs3.d">Pagina promozionale per la consegna pasti. Conversione 12% dal traffico social.</p>
+        </div>
+      </div>
+      <div class="case reveal">
+        <div class="case-thumb t-4"><span>AGRIVA</span></div>
+        <div class="case-body">
+          <span class="tag" data-i18n="cs4.tag">Applicazione web</span>
+          <h3>Agriva</h3>
+          <p data-i18n="cs4.d">Area riservata del consorzio agricolo: calcoli, documenti, reportistica.</p>
+        </div>
+      </div>
+      <div class="case reveal">
+        <div class="case-thumb t-5"><span>ROSSOSTUDIO</span></div>
+        <div class="case-body">
+          <span class="tag" data-i18n="cs5.tag">Branding + sito</span>
+          <h3>RossoStudio</h3>
+          <p data-i18n="cs5.d">Studio di architettura: logo, identità e sito-portfolio di respiro internazionale.</p>
+        </div>
+      </div>
+      <div class="case reveal">
+        <div class="case-thumb t-6"><span>SPEEDPARTS</span></div>
+        <div class="case-body">
+          <span class="tag" data-i18n="cs6.tag">E-commerce + SEO</span>
+          <h3>SpeedParts</h3>
+          <p data-i18n="cs6.d">Shop di ricambi auto con 30.000 codici prodotto. Top-3 su 200 query chiave.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ABOUT ======================= -->
+<section class="section" id="about" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container about-grid">
+    <div>
+      <span class="kicker" data-i18n="about.kicker">Chi siamo</span>
+      <h2 class="h2 reveal" data-i18n-html="about.title">Team piccolo — <span class="grad-text">risultati grandi</span></h2>
+      <p class="lead reveal" data-i18n="about.lead">Siamo uno studio compatto di sviluppo web. Niente catena di montaggio: sul tuo progetto lavora chi lo realizza davvero.</p>
+      <div class="about-points">
+        <div class="about-point reveal">
+          <span class="check">✓</span>
+          <div><b data-i18n="ap1.t">Parliamo russo e italiano</b><p data-i18n="ap1.d">Lavoriamo con clienti in Italia, Russia e nel mondo, nella lingua che ti è comoda.</p></div>
+        </div>
+        <div class="about-point reveal">
+          <span class="check">✓</span>
+          <div><b data-i18n="ap2.t">Tempi e budget fissati</b><p data-i18n="ap2.d">Prima di partire prepariamo piano e preventivo: il prezzo del contratto non cambia durante i lavori.</p></div>
+        </div>
+        <div class="about-point reveal">
+          <span class="check">✓</span>
+          <div><b data-i18n="ap3.t">Veloci, senza perdere qualità</b><p data-i18n="ap3.d">Sito business in 2–3 settimane, e-commerce in 4–6. Anteprima di avanzamento ogni settimana.</p></div>
+        </div>
+        <div class="about-point reveal">
+          <span class="check">✓</span>
+          <div><b data-i18n="ap4.t">Restiamo con te dopo il lancio</b><p data-i18n="ap4.d">Ti formiamo all'uso del sito, curiamo la manutenzione e ti aiutiamo a crescere.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-card reveal">
+      <div class="num-row">
+        <div><b class="grad-text">2020</b><span data-i18n="ac1">anno di fondazione dello studio</span></div>
+        <hr>
+        <div><b class="grad-text">60+</b><span data-i18n="ac2">progetti lanciati e in produzione</span></div>
+        <hr>
+        <div><b class="grad-text">15</b><span data-i18n="ac3">paesi in cui operano i nostri siti</span></div>
+        <hr>
+        <div><b class="grad-text">&lt; 2 ч</b><span data-i18n="ac4">tempo medio di risposta alla richiesta</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= TESTIMONIALS ======================= -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <span class="kicker" data-i18n="testi.kicker">Testimonianze</span>
+    <h2 class="h2 reveal" data-i18n-html="testi.title">Cosa dicono <span class="grad-text">i clienti</span></h2>
+    <div class="testi-grid">
+      <div class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="tw1">«Hanno realizzato lo shop in cinque settimane, nel rispetto del preventivo. A sei mesi le vendite sono cresciute di due volte e mezza: il miglior ritorno degli ultimi anni.»</p>
+        <div class="who"><div class="avatar a-1">MD</div><div><b>Marco Deluca</b><span data-i18n="tw1r">MareTerra, titolare</span></div></div>
+      </div>
+      <div class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="tw2">«Il team ha seguito il progetto in russo, e il sito funziona anche in italiano. La prenotazione online alleggerisce la segreteria: oggi è la porta d'ingresso dei pazienti.»</p>
+        <div class="who"><div class="avatar a-2">AK</div><div><b>Anna Kovaleva</b><span data-i18n="tw2r">DentPro, direttrice</span></div></div>
+      </div>
+      <div class="testi reveal">
+        <div class="stars">★★★★★</div>
+        <p data-i18n="tw3">«Finalmente un fornitore che ricorda i tempi prima di me. L'assistenza risponde subito e le modifiche vengono fatte a prezzo fisso.»</p>
+        <div class="who"><div class="avatar a-3">GP</div><div><b>Giulia Ricci</b><span data-i18n="tw3r">FoodLine, marketing</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PRICING ======================= -->
+<section class="section" id="pricing">
+  <div class="container">
+    <span class="kicker" data-i18n="price.kicker">Prezzi trasparenti</span>
+    <h2 class="h2 reveal" data-i18n-html="price.title">Pacchetti di partenza — <span class="grad-text">prezzi in vista</span></h2>
+    <p class="lead reveal" data-i18n="price.lead">Il preventivo definitivo parte da una call gratuita: il prezzo del contratto non cambia in corsa.</p>
+    <div class="price-grid">
+      <div class="price-card reveal">
+        <div class="pc-head"><span class="pc-name" data-i18n="pr1.n">Start</span></div>
+        <div class="pc-price" data-i18n="pr1.price">da €1.500</div>
+        <p data-i18n="pr1.d">Sito vetrina o piccolo sito business, chiavi in mano, in 2–3 settimane.</p>
+        <ul>
+          <li data-i18n="pr1.l1">Fino a 6 pagine + responsive</li>
+          <li data-i18n="pr1.l2">CMS e training iniziale</li>
+          <li data-i18n="pr1.l3">Base SEO</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" style="width:100%" data-i18n="pr1.btn">Richiedi un preventivo</a>
+      </div>
+      <div class="price-card hot reveal">
+        <span class="pc-badge" data-i18n="pr.badge">Il più scelto</span>
+        <div class="pc-head"><span class="pc-name" data-i18n="pr2.n">Business</span></div>
+        <div class="pc-price" data-i18n="pr2.price">da €3.500</div>
+        <p data-i18n="pr2.d">E-commerce o grande portale aziendale con integrazioni, in 4–6 settimane.</p>
+        <ul>
+          <li data-i18n="pr2.l1">Catalogo, pagamenti, spedizioni</li>
+          <li data-i18n="pr2.l2">Integrazioni ERP / CRM</li>
+          <li data-i18n="pr2.l3">Multilingua · base SEO</li>
+          <li data-i18n="pr2.l4">1 mese di assistenza gratis</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width:100%" data-i18n="pr2.btn">Richiedi un preventivo</a>
+      </div>
+      <div class="price-card reveal">
+        <div class="pc-head"><span class="pc-name" data-i18n="pr3.n">Su misura</span></div>
+        <div class="pc-price" data-i18n="pr3.price">a progetto</div>
+        <p data-i18n="pr3.d">Applicazioni web, aree riservate, portali e integrazioni non standard.</p>
+        <ul>
+          <li data-i18n="pr3.l1">Logica personalizzata</li>
+          <li data-i18n="pr3.l2">React / Node.js / API</li>
+          <li data-i18n="pr3.l3">SLA e team dedicato</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost" style="width:100%" data-i18n="pr3.btn">Richiedi una stima</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section class="section" id="faq" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <span class="kicker" data-i18n="faq.kicker">FAQ</span>
+    <h2 class="h2 reveal" data-i18n-html="faq.title" style="text-align:center">Domande <span class="grad-text">frequenti</span></h2>
+    <div class="faq-wrap" style="margin-top:44px">
+      <div class="faq reveal">
+        <button class="faq-q" aria-expanded="false" aria-controls="faqa6" aria-expanded="false" aria-controls="faqa5" aria-expanded="false" aria-controls="faqa4" aria-expanded="false" aria-controls="faqa3" aria-expanded="false" aria-controls="faqa2" aria-expanded="false" aria-controls="faqa1"><span data-i18n="fq1.q">Quanto costa un sito?</span><span class="pm">+</span></button>
+        <div class="faq-a" id="faqa6" id="faqa5" id="faqa4" id="faqa3" id="faqa2" id="faqa1"><p data-i18n="fq1.a">Un sito business parte da €1.500, un e-commerce da €3.500; le applicazioni su misura si stimano in base alla richiesta. Il preventivo dettagliato è gratuito, dopo una breve call.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button class="faq-q"><span data-i18n="fq2.q">Quanto tempo serve per lo sviluppo?</span><span class="pm">+</span></button>
+        <div class="faq-a"><p data-i18n="fq2.a">Sito business: 2–3 settimane; e-commerce: 4–6. Il termine viene fissato nel contratto e mostriamo l'avanzamento ogni settimana.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button class="faq-q"><span data-i18n="fq3.q">Potrò aggiornare i contenuti da solo?</span><span class="pm">+</span></button>
+        <div class="faq-a"><p data-i18n="fq3.a">Sì. Colleghiamo un CMS comodo e ti formiamo: testi, foto, news e prodotti li aggiorni quando vuoi, senza programmatore.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button class="faq-q"><span data-i18n="fq4.q">Vi occupate voi di hosting e dominio?</span><span class="pm">+</span></button>
+        <div class="faq-a"><p data-i18n="fq4.a">Sì: scegliamo e registriamo il dominio, configuriamo hosting veloce, certificato SSL e caselle di posta sul tuo dominio.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button class="faq-q"><span data-i18n="fq5.q">E dopo il lancio, che assistenza c'è?</span><span class="pm">+</span></button>
+        <div class="faq-a"><p data-i18n="fq5.a">Il primo mese di assistenza è gratuito. Poi si applica la tariffa di manutenzione: aggiornamenti, backup, monitoraggio e qualsiasi modifica.</p></div>
+      </div>
+      <div class="faq reveal">
+        <button class="faq-q"><span data-i18n="fq6.q">Lavorate con clienti internazionali?</span><span class="pm">+</span></button>
+        <div class="faq-a"><p data-i18n="fq6.a">Certo. Realizziamo siti multilingua e seguiamo i progetti interamente a distanza — in russo e in italiano, per iscritto anche in inglese.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section class="contact-band" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <span class="kicker" data-i18n="ct.kicker">Contatti</span>
+      <h2 class="h2 reveal" data-i18n-html="ct.title">Parliamo del <span class="grad-text">tuo progetto?</span></h2>
+      <p class="lead reveal" data-i18n="ct.lead">Raccontaci la tua esigenza: ti rispondiamo con tempi e costi entro 2 ore lavorative. La consulenza è gratuita.</p>
+      <div class="contact-list">
+        <div class="contact-item reveal">
+          <div class="ci-icon" aria-hidden="true">📞</div>
+          <div><b data-i18n="ct.phone">Telefono</b><span><a href="tel:+390000000000">+39 000 000 0000</a> · <a href="tel:+70000000000">+7 000 000-00-00</a></span></div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="ci-icon teal" aria-hidden="true">✉️</div>
+          <div><b data-i18n="ct.email">E-mail</b><span><a href="mailto:info@example.com">info@example.com</a></span></div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="ci-icon" aria-hidden="true">📍</div>
+          <div><b data-i18n="ct.addr">Ufficio</b><span>Via dell'Industria 00, 00000 Città (RM), Italia</span></div>
+        </div>
+      </div>
+    </div>
+    <form class="form-card reveal" id="contactForm">
+      <h3 data-i18n="ct.f-title">Richiesta di consulenza</h3>
+      <p data-i18n="ct.f-sub">Compila il modulo — ti contattiamo entro 2 ore lavorative.</p>
+      <div class="form-row">
+        <div class="field">
+          <label data-i18n="ct.name">Nome *</label>
+          <input type="text" name="name" required data-ph="ct.ph1" placeholder="Il tuo nome">
+        </div>
+        <div class="field">
+          <label data-i18n="ct.contact">Telefono o e-mail *</label>
+          <input type="text" name="contact" required data-ph="ct.ph2" placeholder="+39 ...">
+        </div>
+      </div>
+      <div class="field">
+        <label data-i18n="ct.type">Tipo di progetto</label>
+        <select name="type">
+          <option data-i18n="ct.t1">Sito business</option>
+          <option data-i18n="ct.t2">E-commerce</option>
+          <option data-i18n="ct.t3">Applicazione web</option>
+          <option data-i18n="ct.t4">Design / branding</option>
+          <option data-i18n="ct.t5">SEO / manutenzione</option>
+          <option data-i18n="ct.t6">Altro</option>
+        </select>
+      </div>
+      <div class="field">
+        <label data-i18n="ct.msg">Messaggio</label>
+        <textarea name="message" data-ph="ct.ph3" placeholder="Due righe sulla richiesta..."></textarea>
+      </div>
+      <div class="field consent-field">
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          <span data-i18n="ct.consent">Acconsento al trattamento dei miei dati personali secondo la privacy policy.</span>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%" data-i18n="ct.send">Invia la richiesta</button>
+      <div class="form-ok" id="formOk" role="status" aria-live="polite" data-i18n="ct.ok">✓ Grazie! Richiesta inviata — ti contattiamo presto.</div>
+      <p class="form-note" data-i18n="ct.privacy">Inviando il modulo accetti il trattamento dei dati personali (GDPR).</p>
+    </form>
+  </div>
+</section>
+
+</main>
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="logo"><span class="logo-mark">N</span><span>NEXA<span class="grad-text">.</span></span></a>
+        <p data-i18n="ft.about">Studio di sviluppo web full-service: siti, e-commerce e applicazioni per imprese in Italia e nel mondo.</p>
+      </div>
+      <div>
+        <h4 data-i18n="ft.nav">Naviga</h4>
+        <ul>
+          <li><a href="#services" data-i18n="nav.services2">Servizi</a></li>
+          <li><a href="#cases" data-i18n="nav.cases2">Progetti</a></li>
+          <li><a href="#process" data-i18n="nav.process2">Come lavoriamo</a></li>
+          <li><a href="#about" data-i18n="nav.about2">Chi siamo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft.services">Servizi</h4>
+        <ul>
+          <li><a href="#services" data-i18n="ft.s1">Разработка сайтов</a></li>
+          <li><a href="#services" data-i18n="ft.s2">E-commerce</a></li>
+          <li><a href="#services" data-i18n="ft.s3">UX/UI дизайн</a></li>
+          <li><a href="#services" data-i18n="ft.s4">SEO</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft.contacts">Contatti</h4>
+        <ul>
+          <li><a href="tel:+390000000000">+39 000 000 0000</a></li>
+          <li><a href="mailto:info@example.com">info@example.com</a></li>
+          <li><a href="https://maps.google.com/?q=Via+dell%27Industria+00+Citt%C3%A0+(RM)" rel="noopener">Via dell'Industria 00, Città (RM)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 NEXA Studio. <span data-i18n="ft.rights">Tutti i diritti riservati.</span></span>
+      <span>P.IVA 00000000000 · <a href="#" data-i18n="ft.privacyLink">Privacy policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ==========================================================
+     ЯНДЕКС МЕТРИКА — TODO: замените 00000000 на номер счётчика
+     (Метрика -> Настройка -> Код счётчика)
+     Плейсхолдер отключён, чтобы не было ошибок в консоли.
+     ========================================================== -->
+<script>
+/* ==========================================================
+   ЯНДЕКС МЕТРИКА — TODO: замените 00000000 на номер счётчика
+   (Метрика -> Настройка -> Код счётчика)
+   Загрузка ТОЛЬКО после согласия пользователя (cookie-баннер).
+   ========================================================== */
+window.initYM = function(){
+  const YM_ID = '00000000';   // <-- сюда номер счётчика
+  if(!/^\d{6,9}$/.test(YM_ID) || YM_ID === '00000000') return;
+  if(window.__ymLoaded) return;
+  window.__ymLoaded = true;
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+  ym(YM_ID, 'init', { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+  window.ymId = YM_ID;
+};
+</script>
+
+<button class="to-top" id="toTop" aria-label="To top">↑</button>
+
+<!-- cookie-баннер -->
+<div class="cookie-banner" id="cookieBanner">
+  <h5>🍪 <span data-i18n="cb.t">Cookie e statistiche</span></h5>
+  <p data-i18n-html="cb.p">Usiamo Yandex Metrica e Google Analytics per capire come viene usato il sito e renderlo più utile. Il consenso si può revocare cancellando i dati del sito dal browser.</p>
+  <div class="cb-btns">
+    <button class="btn btn-ghost" id="cbRefuse" data-i18n="cb.refuse">Solo necessari</button>
+    <button class="btn btn-primary" id="cbAccept" data-i18n="cb.accept">Accetta tutti</button>
+  </div>
+</div>
+
+<!-- плавающая CTA-панель -->
+<div class="dock" id="dock">
+  <p><b data-i18n="dock.t">Consulenza gratuita — circa 30 minuti.</b> <span data-i18n="dock.s">Senza pitch e senza pressione.</span></p>
+  <a href="#contact" class="btn btn-primary btn-sm" data-i18n="dock.cta">Prenota</a>
+</div>
+
+<script>
+/* ============================================================
+   1) I18N — словарь RU / IT (заголовки с HTML идут отдельно)
+   ============================================================ */
+const I18N = {
+  /* ---------- ITALIAN ---------- */
+  it: {
+    'meta.title':'NEXA Studio — Realizzazione siti web, e-commerce e web app',
+    'meta.desc':'Realizzazione siti web, e-commerce e applicazioni web in Italia. NEXA Studio — siti che portano clienti.',
+    'nav.services':'Servizi','nav.cases':'Progetti','nav.process':'Come lavoriamo','nav.about':'Chi siamo','nav.faq':'FAQ','nav.contact':'Contatti','nav.cta':'Inizia il progetto',
+    'nav.services2':'Servizi','nav.cases2':'Progetti','nav.process2':'Come lavoriamo','nav.about2':'Chi siamo',
+
+    'hero.kicker':'Web agency full-service',
+    'hero.title':'Siti web che <span class="grad-text">lavorano</span> davvero per il tuo business',
+    'hero.lead':'Progettiamo e sviluppiamo siti vetrina, e-commerce e applicazioni web: design curato, codice veloce e SEO pensata per portare clienti — tutto chiavi in mano.',
+    'hero.cta1':'Parliamo del tuo progetto','hero.cta2':'Guarda i lavori',
+    'hero.s1':'anni di sviluppo','hero.s2':'progetti realizzati','hero.s3':'torna per nuovi lavori','hero.s4':'lingue di supporto',
+    'hero.chip1':'Velocità 98/100','hero.chip2':'Lancio senza stress',
+
+    'services.kicker':'Servizi',
+    'services.title':'Sviluppo siti web — tutto il ciclo <span class="grad-text">dall\'idea al lancio</span>',
+    'services.lead':'Ci occupiamo di tutto: concept, design, sviluppo, contenuti e assistenza tecnica.',
+    'sv1.t':'Siti vetrina e corporate','sv1.d':'Sito vetrina moderno o portale aziendale multisezione con CMS comodo e flessibile.','sv1.l1':'Design responsive','sv1.l2':'CMS a scelta','sv1.l3':'Multilingua',
+    'sv2.t':'E-commerce','sv2.d':'Negozi su PrestaShop e WooCommerce: catalogo, pagamenti, spedizioni e integrazioni.','sv2.l1':'Pagamenti e spedizioni','sv2.l2':'Integrazione ERP / gestionale','sv2.l3':'Cataloghi di grandi volumi',
+    'sv3.t':'Applicazioni web','sv3.d':'Aree riservate, portali e CRM su misura con stack moderno (React, Node.js).','sv3.l1':'Logica personalizzata','sv3.l2':'API e integrazioni','sv3.l3':'Scalabilità',
+    'sv4.t':'UX/UI e branding','sv4.d':'Identità e interfacce che funzionano: dal logo al design system del progetto.','sv4.l1':'Logo e identità','sv4.l2':'Wireframe e prototipi','sv4.l3':'Design system',
+    'sv5.t':'SEO e analytics','sv5.d':'Ottimizzazione tecnica, keyword research e configurazione analytics per generare richieste.','sv5.l1':'Audit tecnico SEO','sv5.l2':'Google / Yandex','sv5.l3':'Report e obiettivi',
+    'sv6.t':'Manutenzione e crescita','sv6.d':'Aggiornamenti, backup, sicurezza e nuovi sviluppi: il sito resta sempre al top.','sv6.l1':'Aggiornamenti e backup','sv6.l2':'Monitoraggio e sicurezza','sv6.l3':'Nuove funzioni su richiesta',
+
+    'process.kicker':'Come lavoriamo',
+    'process.title':'Quattro passi — <span class="grad-text">chiari e nei tempi</span>',
+    'process.lead':'Un processo trasparente, senza sorprese: sai sempre a che punto è il progetto e quale è il passo successivo.',
+    'ps1.t':'Analisi e piano','ps1.d':'Studiamo il tuo business e i concorrenti, definiamo obiettivi e struttura. Tempi e budget fissati subito.',
+    'ps2.t':'Design','ps2.d':'Prototipi e layout su misura con due round di revisioni. Ogni schermata viene approvata da te.',
+    'ps3.t':'Sviluppo','ps3.d':'Realizziamo il sito, collegiamo CMS, integrazioni e analytics. Test approfonditi su tutti i dispositivi.',
+    'ps4.t':'Lancio e crescita','ps4.d':'Pubblichiamo, impostiamo la base SEO, formiamo il team all\'uso del CMS e restiamo al tuo fianco.',
+
+    'cases.kicker':'Portfolio',
+    'cases.title':'Ultimi <span class="grad-text">progetti</span>',
+    'cases.lead':'Esempi di lavori in settori diversi: dal business locale ai progetti internazionali.',
+    'cs1.tag':'E-commerce','cs1.d':'Negozio di articoli per la casa di produzione italiana. +160% di vendite nel primo anno.',
+    'cs2.tag':'Sito corporate','cs2.d':'Sito multilingua della clinica con prenotazione online. −40% di carico di lavoro per la segreteria.',
+    'cs3.tag':'Landing page','cs3.d':'Pagina promozionale per la consegna pasti. Conversione 12% dal traffico social.',
+    'cs4.tag':'Applicazione web','cs4.d':'Area riservata del consorzio agricolo: calcoli, documenti, reportistica.',
+    'cs5.tag':'Branding + sito','cs5.d':'Studio di architettura: logo, identità e sito-portfolio di respiro internazionale.',
+    'cs6.tag':'E-commerce + SEO','cs6.d':'Shop di ricambi auto con 30.000 codici prodotto. Top-3 su 200 query chiave.',
+
+    'about.kicker':'Chi siamo',
+    'about.title':'Team piccolo — <span class="grad-text">risultati grandi</span>',
+    'about.lead':'Siamo uno studio compatto di sviluppo web. Niente catena di montaggio: sul tuo progetto lavora chi lo realizza davvero.',
+    'ap1.t':'Parliamo russo e italiano','ap1.d':'Lavoriamo con clienti in Italia, Russia e nel mondo, nella lingua che ti è comoda.',
+    'ap2.t':'Tempi e budget fissati','ap2.d':'Prima di partire prepariamo piano e preventivo: il prezzo del contratto non cambia durante i lavori.',
+    'ap3.t':'Veloci, senza perdere qualità','ap3.d':'Sito business in 2–3 settimane, e-commerce in 4–6. Anteprima di avanzamento ogni settimana.',
+    'ap4.t':'Restiamo con te dopo il lancio','ap4.d':'Ti formiamo all\'uso del sito, curiamo la manutenzione e ti aiutiamo a crescere.',
+    'ac1':'anno di fondazione dello studio','ac2':'progetti lanciati e in produzione','ac3':'paesi in cui operano i nostri siti','ac4':'tempo medio di risposta alla richiesta',
+
+    'testi.kicker':'Testimonianze',
+    'testi.title':'Cosa dicono <span class="grad-text">i clienti</span>',
+    'tw1':'«Hanno realizzato lo shop in cinque settimane, nel rispetto del preventivo. A sei mesi le vendite sono cresciute di due volte e mezza: il miglior ritorno degli ultimi anni.»','tw1r':'MareTerra, titolare',
+    'tw2':'«Il team ha seguito il progetto in russo, e il sito funziona anche in italiano. La prenotazione online alleggerisce la segreteria: oggi è la porta d\'ingresso dei pazienti.»','tw2r':'DentPro, direttrice',
+    'tw3':'«Finalmente un fornitore che ricorda i tempi prima di me. L\'assistenza risponde subito e le modifiche vengono fatte a prezzo fisso.»','tw3r':'FoodLine, marketing',
+
+    'faq.kicker':'FAQ','faq.title':'Domande <span class="grad-text">frequenti</span>',
+    'fq1.q':'Quanto costa un sito?','fq1.a':'Un sito business parte da €1.500, un e-commerce da €3.500; le applicazioni su misura si stimano in base alla richiesta. Il preventivo dettagliato è gratuito, dopo una breve call.',
+    'fq2.q':'Quanto tempo serve per lo sviluppo?','fq2.a':'Sito business: 2–3 settimane; e-commerce: 4–6. Il termine viene fissato nel contratto e mostriamo l\'avanzamento ogni settimana.',
+    'fq3.q':'Potrò aggiornare i contenuti da solo?','fq3.a':'Sì. Colleghiamo un CMS comodo e ti formiamo: testi, foto, news e prodotti li aggiorni quando vuoi, senza programmatore.',
+    'fq4.q':'Vi occupate voi di hosting e dominio?','fq4.a':'Sì: scegliamo e registriamo il dominio, configuriamo hosting veloce, certificato SSL e caselle di posta sul tuo dominio.',
+    'fq5.q':'E dopo il lancio, che assistenza c\'è?','fq5.a':'Il primo mese di assistenza è gratuito. Poi si applica la tariffa di manutenzione: aggiornamenti, backup, monitoraggio e qualsiasi modifica.',
+    'fq6.q':'Lavorate con clienti internazionali?','fq6.a':'Certo. Realizziamo siti multilingua e seguiamo i progetti interamente a distanza — in russo e in italiano, per iscritto anche in inglese.',
+
+    'ct.kicker':'Contatti','ct.title':'Parliamo del <span class="grad-text">tuo progetto?</span>',
+    'ct.lead':'Raccontaci la tua esigenza: ti rispondiamo con tempi e costi entro 2 ore lavorative. La consulenza è gratuita.',
+    'ct.phone':'Telefono','ct.email':'E-mail','ct.addr':'Ufficio',
+    'ct.f-title':'Richiesta di consulenza','ct.f-sub':'Compila il modulo — ti contattiamo entro 2 ore lavorative.',
+    'ct.name':'Nome *','ct.contact':'Telefono o e-mail *','ct.type':'Tipo di progetto','ct.msg':'Messaggio',
+    'ct.t1':'Sito business','ct.t2':'E-commerce','ct.t3':'Applicazione web','ct.t4':'Design / branding','ct.t5':'SEO / manutenzione','ct.t6':'Altro',
+    'ct.ph1':'Il tuo nome','ct.ph2':'+39 ...','ct.ph3':'Due righe sulla richiesta...',
+    'ct.consent':'Acconsento al trattamento dei miei dati personali secondo la privacy policy.',
+    'ct.send':'Invia la richiesta','ct.privacy':'Inviando il modulo accetti il trattamento dei dati personali (GDPR).',
+    'ct.ok':'✓ Grazie! Richiesta inviata — ti contattiamo presto.',
+
+    'ft.about':'Studio di sviluppo web full-service: siti, e-commerce e applicazioni per imprese in Italia e nel mondo.',
+    'ft.nav':'Naviga','ft.services':'Servizi','ft.contacts':'Contatti',
+    'ft.rights':'Tutti i diritti riservati.','ft.privacyLink':'Privacy policy',
+
+    'pain.kicker':'Situazioni conosciute?',
+    'pain.title':'Quale di questi problemi <span class="grad-text">è il tuo?</span>',
+    'pain.lead':'La maggior parte dei nostri clienti è arrivata a noi proprio dopo una di queste storie. Ti suona familiare?',
+    'pain.why':'Dove sta il problema','pain.way':'Come lo risolviamo',
+    'pn1.t':'Sito presente, richieste assenti','pn2.t':'«Lo sviluppatore è sparito»','pn3.t':'Dal telefono non si legge','pn4.t':'Fatto con un builder — bloccati','pn5.t':'Anni di SEO senza risultati','pn6.t':'Il sito non cresce con l\'azienda',
+
+    'price.kicker':'Prezzi trasparenti',
+    'price.title':'Pacchetti di partenza — <span class="grad-text">prezzi in vista</span>',
+    'price.lead':'Il preventivo definitivo parte da una call gratuita: il prezzo del contratto non cambia in corsa.',
+    'pr1.n':'Start','pr1.d':'Sito vetrina o piccolo sito business, chiavi in mano, in 2–3 settimane.','pr1.l1':'Fino a 6 pagine + responsive','pr1.l2':'CMS e training iniziale','pr1.l3':'Base SEO','pr1.btn':'Richiedi un preventivo',
+    'pr.badge':'Il più scelto',
+    'pr2.n':'Business','pr2.d':'E-commerce o grande portale aziendale con integrazioni, in 4–6 settimane.','pr2.l1':'Catalogo, pagamenti, spedizioni','pr2.l2':'Integrazioni ERP / CRM','pr2.l3':'Multilingua · base SEO','pr2.l4':'1 mese di assistenza gratis','pr2.btn':'Richiedi un preventivo',
+    'pr3.n':'Su misura','pr3.price':'a progetto',
+    'pr1.price':'da €1.500','pr2.price':'da €3.500','pr3.d':'Applicazioni web, aree riservate, portali e integrazioni non standard.','pr3.l1':'Logica personalizzata','pr3.l2':'React / Node.js / API','pr3.l3':'SLA e team dedicato','pr3.btn':'Richiedi una stima',
+
+    'dock.t':'Consulenza gratuita — circa 30 minuti.','dock.s':'Senza pitch e senza pressione.','dock.cta':'Prenota',
+
+    'cb.t':'Cookie e statistiche',
+    'cb.p':'Usiamo Yandex Metrica e Google Analytics per capire come viene usato il sito e renderlo più utile. Il consenso si può revocare cancellando i dati del sito dal browser.',
+    'cb.refuse':'Solo necessari','cb.accept':'Accetta tutti'
+  },
+
+  /* ---------- RUSSIAN ---------- */
+  ru: {
+    'meta.title':'NEXA Studio — Разработка сайтов, интернет-магазинов и веб-приложений',
+    'meta.desc':'Разработка сайтов, интернет-магазинов и веб-приложений под ключ. NEXA Studio — сайты, которые приносят заявки.',
+    'nav.services':'Услуги','nav.cases':'Проекты','nav.process':'Процесс','nav.about':'О нас','nav.faq':'FAQ','nav.contact':'Контакты','nav.cta':'Начать проект',
+    'nav.services2':'Услуги','nav.cases2':'Проекты','nav.process2':'Процесс','nav.about2':'О нас',
+
+    'hero.kicker':'Веб-студия полного цикла',
+    'hero.title':'Сайты, которые <span class="grad-text">работают</span> на ваш бизнес',
+    'hero.lead':'Проектируем и разрабатываем сайты, интернет-магазины и веб-приложения: продуманный дизайн, быстрый код и понятное продвижение — под ключ.',
+    'hero.cta1':'Обсудить проект','hero.cta2':'Смотреть работы',
+    'hero.s1':'лет в разработке','hero.s2':'реализованных проектов','hero.s3':'клиентов возвращаются','hero.s4':'языка поддержки',
+    'hero.chip1':'Скорость 98/100','hero.chip2':'Запуск без стресса',
+
+    'services.kicker':'Услуги',
+    'services.title':'Полный цикл — <span class="grad-text">от идеи до запуска</span>',
+    'services.lead':'Берём на себя всё: концепцию, дизайн, разработку, наполнение и техническую поддержку.',
+    'sv1.t':'Корпоративные сайты','sv1.d':'Современный сайт-визитка или многостраничный корпоративный сайт с удобной CMS.','sv1.l1':'Адаптивный дизайн','sv1.l2':'CMS на выбор','sv1.l3':'Мультиязычность',
+    'sv2.t':'Интернет-магазины','sv2.d':'Магазины на PrestaShop и WooCommerce: каталог, оплата, доставка, интеграции.','sv2.l1':'Оплата и доставка','sv2.l2':'Интеграции ERP / 1С','sv2.l3':'Каталог больших размеров',
+    'sv3.t':'Веб-приложения','sv3.d':'Личные кабинеты, порталы и CRM-системы на современном стеке (React, Node.js).','sv3.l1':'Индивидуальная логика','sv3.l2':'API и интеграции','sv3.l3':'Масштабируемость',
+    'sv4.t':'UX/UI и брендинг','sv4.d':'Фирменный стиль и интерфейсы, которые работают: от логотипа до дизайн-системы.','sv4.l1':'Логотип и стиль','sv4.l2':'Прототипы и макеты','sv4.l3':'Дизайн-система проекта',
+    'sv5.t':'SEO и аналитика','sv5.d':'Техническая оптимизация, семантика и настройка аналитики, чтобы сайт приносил заявки.','sv5.l1':'Технический SEO-аудит','sv5.l2':'Google / Яндекс','sv5.l3':'Отчётность и цели',
+    'sv6.t':'Поддержка и развитие','sv6.d':'Обновления, резервные копии, безопасность и доработки — сайт всегда в строю.','sv6.l1':'Обновления и бэкапы','sv6.l2':'Мониторинг и безопасность','sv6.l3':'Новые фичи по запросу',
+
+    'process.kicker':'Как мы работаем',
+    'process.title':'Четыре шага — <span class="grad-text">прозрачно и в срок</span>',
+    'process.lead':'Понятный процесс без сюрпризов: вы всегда знаете, на каком этапе проект и что будет дальше.',
+    'ps1.t':'Аналитика и план','ps1.d':'Изучаем ваш бизнес и конкурентов, формируем цели и структуру сайта. Фиксируем сроки и бюджет.',
+    'ps2.t':'Дизайн','ps2.d':'Прототипы и фирменный макет с двумя раундами правок. Вы утверждаете каждый экран.',
+    'ps3.t':'Разработка','ps3.d':'Верстаем и программируем, подключаем CMS, интеграции и аналитику. Тестируем на всех устройствах.',
+    'ps4.t':'Запуск и рост','ps4.d':'Публикуем сайт, закладываем SEO-базу, обучаем команде работе с CMS и остаёмся на связи.',
+
+    'cases.kicker':'Портфолио',
+    'cases.title':'Последние <span class="grad-text">проекты</span>',
+    'cases.lead':'Примеры работ разных отраслей — от локального бизнеса до международных проектов.',
+    'cs1.tag':'E-commerce','cs1.d':'Интернет-магазин товаров для дома из Италии. +160% продаж за первый год.',
+    'cs2.tag':'Корпоративный сайт','cs2.d':'Многоязычный сайт клиники с онлайн-записью. −40% нагрузки на администраторов.',
+    'cs3.tag':'Landing Page','cs3.d':'Промо-страница доставки питания. Конверсия 12% по трафику из соцсетей.',
+    'cs4.tag':'Веб-приложение','cs4.d':'Личный кабинет аграрного кооператива: расчёты, документы, отчётность.',
+    'cs5.tag':'Брендинг + сайт','cs5.d':'Архитектурная студия: логотип, стиль и сайт-портфолио международного уровня.',
+    'cs6.tag':'E-commerce + SEO','cs6.d':'Магазин автозапчастей с 30 000 артикулов. Топ-3 по 200 ключевым запросам.',
+
+    'about.kicker':'О студии',
+    'about.title':'Небольшая команда — <span class="grad-text">большие результаты</span>',
+    'about.lead':'Мы — компактная студия веб-разработки. Никакого менеджерского конвейера: с вами работают те, кто делает проект.',
+    'ap1.t':'Говорим по-русски и по-итальянски','ap1.d':'Работаем с клиентами в Италии, России и по всему миру — на удобном вам языке.',
+    'ap2.t':'Фиксируем сроки и бюджет','ap2.d':'До старта готовим план и смету: цена, указанная в договоре, не меняется по ходу работы.',
+    'ap3.t':'Делаем быстро без потери качества','ap3.d':'Типовой сайт — 2–3 недели, интернет-магазин — 4–6 недель. Промежуточные показы каждую неделю.',
+    'ap4.t':'Остаёмся рядом после запуска','ap4.d':'Обучаем работе с сайтом, ведём техническую поддержку и помогаем расти.',
+    'ac1':'год основания студии','ac2':'проектов запущено и работает','ac3':'стран, где работают наши сайты','ac4':'среднее время ответа на заявку',
+
+    'testi.kicker':'Отзывы',
+    'testi.title':'Что говорят <span class="grad-text">клиенты</span>',
+    'tw1':'«Сделали магазин за пять недель, строго по смете. Через полгода продаж больше в три раза — это лучший ROI из всего, во что мы вкладывались.»','tw1r':'MareTerra, владелец',
+    'tw2':'«Команда вела проект на русском, а сайт работает и на итальянском. Онлайн-запись разгрузила админку — теперь это главная точка входа пациентов.»','tw2r':'DentPro, директор',
+    'tw3':'«Наконец-то подрядчик, который сам напоминает про сроки. Поддержка отвечает быстро, доработки идут по фиксированной цене.»','tw3r':'FoodLine, маркетинг',
+
+    'faq.kicker':'FAQ','faq.title':'Частые <span class="grad-text">вопросы</span>',
+    'fq1.q':'Сколько стоит сайт?','fq1.a':'Типовой корпоративный сайт — от €1 500, интернет-магазин — от €3 500, индивидуальные веб-приложения считаем по задаче. Точную смету даём бесплатно после короткого созвона.',
+    'fq2.q':'Сколько времени занимает разработка?','fq2.a':'Корпоративный сайт — 2–3 недели, интернет-магазин — 4–6 недель. Срок фиксируем в договоре и показываем прогресс каждую неделю.',
+    'fq3.q':'Смогу ли я сам обновлять контент?','fq3.a':'Да. Мы подключаем удобную CMS и проводим обучение: вы самостоятельно меняете тексты, фото, новости и товары — без программиста.',
+    'fq4.q':'Вы берёте на себя хостинг и домен?','fq4.a':'Да, поможем выбрать и зарегистрировать домен, настроим быстрый хостинг, SSL-сертификат и почтовые ящики на вашем домене.',
+    'fq5.q':'Что с поддержкой после запуска?','fq5.a':'Первый месяц поддержки — бесплатно. Дальше — по тарифу сопровождения: обновления, бэкапы, мониторинг и любые доработки.',
+    'fq6.q':'Вы работаете с международными клиентами?','fq6.a':'Конечно. Мы делаем мультиязычные сайты и ведём проекты полностью удалённо — общаемся по-русски и по-итальянски, в том числе на английском в переписке.',
+
+    'ct.kicker':'Контакты','ct.title':'Обсудим <span class="grad-text">ваш проект?</span>',
+    'ct.lead':'Расскажите о задаче — вернёмся с оценкой сроков и стоимости в течение 2 рабочих часов. Консультация бесплатна.',
+    'ct.phone':'Телефон','ct.email':'Почта','ct.addr':'Офис',
+    'ct.f-title':'Заявка на консультацию','ct.f-sub':'Заполните форму — мы свяжемся с вами в течение 2 рабочих часов.',
+    'ct.name':'Имя *','ct.contact':'Телефон или e-mail *','ct.type':'Тип проекта','ct.msg':'Сообщение',
+    'ct.t1':'Корпоративный сайт','ct.t2':'Интернет-магазин','ct.t3':'Веб-приложение','ct.t4':'Дизайн / брендинг','ct.t5':'SEO / поддержка','ct.t6':'Другое',
+    'ct.ph1':'Ваше имя','ct.ph2':'+39 ...','ct.ph3':'Пара слов о задаче...',
+    'ct.consent':'Согласен(-на) на обработку персональных данных согласно политике конфиденциальности',
+    'ct.send':'Отправить заявку','ct.privacy':'Отправляя форму, вы соглашаетесь на обработку персональных данных (GDPR).',
+    'ct.ok':'✓ Спасибо! Заявка отправлена — мы скоро свяжемся с вами.',
+
+    'ft.about':'Студия веб-разработки полного цикла. Сайты, интернет-магазины и веб-приложения для бизнеса в Италии и по всему миру.',
+    'ft.nav':'Разделы','ft.services':'Услуги','ft.contacts':'Контакты',
+    'ft.rights':'Все права защищены.','ft.privacyLink':'Политика конфиденциальности',
+
+    'pain.kicker':'Знакомые ситуации?',
+    'pain.title':'Какая из этих проблем <span class="grad-text">про вас?</span>',
+    'pain.lead':'Многие наши клиенты приходят к нам именно после одной из этих историй. Что-то похожее?',
+    'pain.why':'В чём причина','pain.way':'Как мы это решаем',
+    'pn1.t':'Сайт есть, а заявок нет','pn2.t':'«Фрилансер пропал»','pn3.t':'Сайт не открывается с телефона','pn4.t':'Сделали на конструкторе — застряли','pn5.t':'Годами платим за SEO без результата','pn6.t':'Сайт не растёт вместе с бизнесом',
+
+    'price.kicker':'Прозрачные тарифы',
+    'price.title':'Стартовые пакеты — <span class="grad-text">цены на виду</span>',
+    'price.lead':'Финальная смета — после бесплатного созвона: цена в договоре не меняется по ходу работы.',
+    'pr1.n':'Старт','pr1.d':'Сайт-визитка или небольшой корпоративный сайт под ключ — за 2–3 недели.','pr1.l1':'До 6 страниц + адаптив','pr1.l2':'CMS + обучение работе с ней','pr1.l3':'Базовый набор SEO','pr1.btn':'Получить смету',
+    'pr.badge':'Популярный',
+    'pr2.n':'Бизнес','pr2.d':'Интернет-магазин или большой корпоративный сайт с интеграциями — за 4–6 недель.','pr2.l1':'Каталог, оплата, доставка','pr2.l2':'Интеграции ERP / 1С / CRM','pr2.l3':'Многоязычность · SEO-база','pr2.l4':'1 месяц поддержки бесплатно','pr2.btn':'Получить смету',
+    'pr3.n':'Своё решение','pr3.price':'по задаче',
+    'pr1.price':'от €1 500','pr2.price':'от €3 500','pr3.d':'Веб-приложения, личные кабинеты, порталы и нестандартные интеграции.','pr3.l1':'Индивидуальная логика','pr3.l2':'React / Node.js / API','pr3.l3':'SLA и выделенная команда','pr3.btn':'Запросить расчёт',
+
+    'dock.t':'Бесплатная консультация — около 30 минут.','dock.s':'Без презентаций и давления.','dock.cta':'Записаться',
+
+    'cb.t':'Cookies и статистика',
+    'cb.p':'Мы используем Яндекс.Метрику и Google Analytics, чтобы понять, как сайт используют посетители, и стать полезнее. Согласие можно отозвать, очистив данные сайта в браузере.',
+    'cb.refuse':'Только необходимое','cb.accept':'Принять всё'
+  }
+};
+
+/* применяем выбранный язык ко всем элементам */
+function setLang(lang){
+  const dict = I18N[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    if(dict[el.dataset.i18n]) el.textContent = dict[el.dataset.i18n];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    if(dict[el.dataset.i18nHtml]) el.innerHTML = dict[el.dataset.i18nHtml];
+  });
+  document.querySelectorAll('[data-ph]').forEach(el=>{
+    if(dict[el.dataset.ph]) el.placeholder = dict[el.dataset.ph];
+  });
+  document.getElementById('langIT').classList.toggle('active', lang==='it');
+  document.getElementById('langRU').classList.toggle('active', lang==='ru');
+  document.getElementById('langIT').setAttribute('aria-pressed', String(lang==='it'));
+  document.getElementById('langRU').setAttribute('aria-pressed', String(lang==='ru'));
+  document.getElementById('burger').setAttribute('aria-expanded','false');
+  /* SEO: title и description меняются вместе с языком; ?lang=ru — отдельный адрес RU-версии */
+  const md = document.querySelector('meta[name="description"]');
+  if(dict['meta.title']) document.title = dict['meta.title'];
+  if(dict['meta.desc'] && md) md.setAttribute('content', dict['meta.desc']);
+  if(window.history && history.replaceState)
+    history.replaceState(null,'', lang==='ru' ? '?lang=ru' : location.pathname);
+  /* панель болевых точек хранит свои тексты в отдельном словаре */
+  const activeTab = document.querySelector('.pain-tab.active');
+  if(activeTab && typeof renderPain === 'function' && PAINS_READY){
+    renderPain([...document.querySelectorAll('.pain-tab')].indexOf(activeTab));
+  }
+  try{ localStorage.setItem('nexaLang', lang); }catch(e){}
+}
+document.getElementById('langIT').addEventListener('click',()=>setLang('it'));
+document.getElementById('langRU').addEventListener('click',()=>setLang('ru'));
+try{
+  const saved = localStorage.getItem('nexaLang');
+  const browser = (navigator.language||'').toLowerCase();
+  setLang(saved || (browser.startsWith('ru') ? 'ru' : 'it'));
+}catch(e){ setLang('it'); }
+
+/* ============================================================
+   2) Header: границы / мобильное меню
+   ============================================================ */
+const header = document.getElementById('header');
+const toTop = document.getElementById('toTop');
+addEventListener('scroll',()=>{
+  header.classList.toggle('scrolled', scrollY > 10);
+  toTop.classList.toggle('show', scrollY > 600);
+},{passive:true});
+toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click',()=>{
+  const open = navLinks.classList.toggle('open');
+  burger.setAttribute('aria-expanded', String(open));
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+/* ============================================================
+   3) Плавные появления
+   ============================================================ */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach((el,i)=>{
+  el.style.transitionDelay = (i%4)*70 + 'ms';
+  io.observe(el);
+});
+/* страховка: если observer не сработал, показываем всё через 3 c */
+setTimeout(()=>document.querySelectorAll('.reveal:not(.visible)')
+  .forEach(el=>el.classList.add('visible')),3000);
+
+/* ============================================================
+   4) FAQ accordion
+   ============================================================ */
+document.querySelectorAll('.faq').forEach(f=>{
+  f.querySelector('.faq-q').addEventListener('click',()=>{
+    const wasOpen = f.classList.contains('open');
+    document.querySelectorAll('.faq.open').forEach(o=>{
+      o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null;
+      o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!wasOpen){
+      f.classList.add('open');
+      const a = f.querySelector('.faq-a');
+      a.style.maxHeight = a.scrollHeight + 'px';
+      f.querySelector('.faq-q').setAttribute('aria-expanded','true');
+    }
+  });
+});
+
+/* ============================================================
+   5) Marquee — дублируем содержимое для бесшовной ленты
+   ============================================================ */
+const track = document.getElementById('marqueeTrack');
+track.innerHTML += track.innerHTML;
+
+/* ============================================================
+   6) Демо-отправка формы (бэкенда пока нет)
+   ============================================================ */
+document.getElementById('contactForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  document.getElementById('formOk').style.display = 'block';
+  /* цели в GA4 и Яндекс Метрике */
+  if(window.leadEvent) window.leadEvent();
+  if(window.ym && window.ymId) window.ym(window.ymId, 'reachGoal', 'LEAD');
+  e.target.reset();
+  setTimeout(()=>{ document.getElementById('formOk').style.display='none'; }, 6000);
+});
+
+/* ============================================================
+   7) Pain picker — выбор «болевой» ситуации
+   ============================================================ */
+const PAINS = [
+  {q:{it:'«Abbiamo il sito, ma non porta clienti. Ci porta solo la spesa per la manutenzione.»',ru:'«У нас есть сайт, но он не приносит клиентов. Только деньги на поддержку.»'},
+   why:{it:'Il sito non ha obiettivi né inviti all\'azione: sembra un catalogo, non un venditore. La struttura non accompagna il visitatore alla richiesta.',ru:'У сайта нет целей и призывов к действию: он выглядит как каталог, а не как продавец. Структура не ведёт посетителя к заявке.'},
+   way:{it:'Ripartiamo dagli obiettivi: struttura orientata alla conversione, testi per i clienti, inviti all\'azione chiari e tracciamento delle richieste.',ru:'Пересобираем сайт вокруг целей: конверсионная структура, тексты под клиентов, понятные призывы к действию и учёт каждой заявки.'}},
+  {q:{it:'«Lo sviluppatore è sparito, il sito è rimasto con noi e non sappiamo più nulla.»',ru:'«Разработчик пропал, сайт остался у нас, а мы не знаем, что с ним делать.»'},
+   why:{it:'Nessun contratto di manutenzione, accesso ai file e al pannello dispersi. Il sito è una scatola nera e col tempo diventa un rischio.',ru:'Нет договора на поддержку, а доступ к файлам и админке потерян. Сайт — «чёрный ящик», который со временем становится риском.'},
+   way:{it:'Recuperiamo gli accessi, mettiamo in sicurezza il sito (aggiornamenti e backup) e, se serve, lo trasferiamo su una CMS pulita e ben documentata.',ru:'Восстанавливаем доступы, приводим сайт в безопасное состояние (обновления, бэкапы), при необходимости переносим на понятную CMS и передаём документацию.'}},
+  {q:{it:'«Dal telefono il sito è illeggibile e Google ci penalizza.»',ru:'«С телефона сайт нечитаем, а Google понижает нас в поиске.»'},
+   why:{it:'Layout fisso degli anni scorsi: mobile non è solo «ridimensionare» — è un\'esperienza e un fattore SEO critico.',ru:'Фиксированная вёрстка прошлых лет: мобильная версия — не «уменьшенный» сайт, а отдельный опыт и критичный фактор SEO.'},
+   way:{it:'Rifaciamo la parte grafica responsive, ottimizziamo peso e velocità (Core Web Vitals) e aggiorniamo i dati tecnici per la ricerca.',ru:'Переверстываем сайт адаптивно, оптимизируем вес и скорость (Core Web Vitals), обновляем техническое SEO.'}},
+  {q:{it:'«Abbiamo fatto tutto noi con un site builder… e ci siamo fermati.»',ru:'«Сделали сайт сами на конструкторе… и застряли.»'},
+   why:{it:'I builder sono ottimi per partire, ma hanno un soffitto: funzioni, velocità e SEO. Ogni compromesso «così e basta» vi costa clienti.',ru:'Конструкторы хороши на старте, но упираются в потолок по функциям, скорости и SEO. «И так сойдёт» оборачивается упущенными клиентами.'},
+   way:{it:'Portiamo i contenuti su misura: layout professionale, funzioni vere, velocità alta e struttura che cresce con l\'azienda.',ru:'Переносим контент на профессиональную платформу: настоящий дизайн, нужные функции, высокая скорость и структура, которая растёт вместе с бизнесом.'}},
+  {q:{it:'«Paghiamo il SEO da anni… e il traffico non cambia.»',ru:'«Мы годами платим за SEO… а трафик не растёт.»'},
+   why:{it:'Senza un audit e una strategia è solo spesa mensile: lavoro tecnico non visibile, testo che non risponde alle ricerche vere.',ru:'Без аудита и стратегии SEO превращается в ежемесячный расход: невидимая техническая работа и тексты, не отвечающие реальным запросам.'},
+   way:{it:'Partiamo da un\'analisi onesta: ciò che vale la pena mantenere, ciò che va rifatto. Poi contenuti basati su ricerche reali, obiettivi misurabili e report trasparenti.',ru:'Начинаем с честного аудита: что оставить, что переделать. Затем — контент под реальные запросы, измеримые цели и прозрачные отчёты.'}},
+  {q:{it:'«Il sito non regge: prodotti nuovi, lingue diverse, tutto va chiedere a qualcuno.»',ru:'«Сайт не растёт вместе с бизнесом: новый товар, новый язык — снова звать разработчика.»'},
+   why:{it:'Tecnologia rigida: struttura non pensata per crescere, tutto dipende da chi l\'ha costruita.',ru:'Технология не даёт расти: структура не рассчитана на развитие, всё упирается в того, кто её сделал.'},
+   way:{it:'Progettiamo l\'architettura per lo sviluppo: più lingue, più prodotti, nuovi servizi e integrazioni — senza ricostruire da capo.',ru:'Проектируем архитектуру под развитие: новые языки, товары, услуги и интеграции — без пересборки с нуля.'}}
+];
+const PAIN_KEYS = ['pn1','pn2','pn3','pn4','pn5','pn6'];
+let painLang = 'it';
+var PAINS_READY = false;
+function renderPain(idx){
+  if(idx < 0) idx = 0;
+  const p = PAINS[idx];
+  painLang = document.documentElement.lang || 'it';
+  document.getElementById('ppQuote').textContent = p.q[painLang === 'ru' ? 'ru' : 'it'];
+  document.getElementById('ppWhy').textContent = p.why[painLang === 'ru' ? 'ru' : 'it'];
+  document.getElementById('ppWay').textContent = p.way[painLang === 'ru' ? 'ru' : 'it'];
+}
+document.querySelectorAll('.pain-tab').forEach((btn,i)=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.pain-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderPain(i);
+  });
+});
+renderPain(0);
+PAINS_READY = true;
+
+/* ============================================================
+   8) Плавающая панель (появляется при скролле, скрывается над формой)
+   ============================================================ */
+const dock = document.getElementById('dock');
+const contactSec = document.getElementById('contact');
+addEventListener('scroll',()=>{
+  const past = scrollY > 900;
+  const r = contactSec.getBoundingClientRect();
+  const nearForm = r.top < innerHeight && r.bottom > 80;
+  dock.classList.toggle('show', past && !nearForm);
+},{passive:true});
+
+/* ============================================================
+   9) Cookie-баннер: аналитика грузится только после согласия
+   ============================================================ */
+const cbBanner = document.getElementById('cookieBanner');
+const cbAccept = document.getElementById('cbAccept');
+const cbRefuse = document.getElementById('cbRefuse');
+function startAnalytics(){
+  if(window.initGA4) initGA4();
+  if(window.initYM) initYM();
+}
+let consent = null;
+try{ consent = localStorage.getItem('nexaConsent'); }catch(e){}
+if(consent === 'granted'){
+  startAnalytics();                                     // согласие дано ранее
+} else if(consent === 'denied'){
+  /* счётчики не грузим вообще */
+} else {
+  setTimeout(()=>cbBanner.classList.add('show'), 1600); // показать баннер
+}
+cbAccept.addEventListener('click',()=>{
+  try{ localStorage.setItem('nexaConsent','granted'); }catch(e){}
+  cbBanner.classList.remove('show');
+  startAnalytics();
+});
+cbRefuse.addEventListener('click',()=>{
+  try{ localStorage.setItem('nexaConsent','denied'); }catch(e){}
+  cbBanner.classList.remove('show');
+});
+</script>
+</body>
+</html>
